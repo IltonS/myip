@@ -29,6 +29,7 @@
 *.ild
 *.ilf
 *ils
+*.#*
 #
 
 # Delphi compiler-generated binaries (safe to delete)

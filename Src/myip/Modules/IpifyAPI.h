@@ -1,32 +1,25 @@
 //---------------------------------------------------------------------------
 
-#ifndef MainH
-#define MainH
+#ifndef IpifyAPIH
+#define IpifyAPIH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Forms.hpp>
-#include <Vcl.Dialogs.hpp>
-
-#include "IpifyAPI.h"
-#include <Vcl.Menus.hpp>
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.ObjectScope.hpp>
+#include <REST.Client.hpp>
+#include <REST.Types.hpp>
 //---------------------------------------------------------------------------
-class TFrmMain : public TForm
+class TDmIpifyAPI : public TDataModule
 {
 __published:	// IDE-managed Components
-	TGroupBox *GbPublicIP;
-	TLabel *LblPublicIP;
-	TPopupMenu *PublicIPPopupMenu;
-	TMenuItem *BtnCopyPublicIP;
-	void __fastcall FormShow(TObject *Sender);
-	void __fastcall BtnCopyPublicIPClick(TObject *Sender);
-
+	TRESTClient *RESTClient;
+	TRESTRequest *RESTRequest;
+	TRESTResponse *RESTResponse;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TFrmMain(TComponent* Owner);
+	__fastcall TDmIpifyAPI(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TFrmMain *FrmMain;
+extern PACKAGE TDmIpifyAPI *DmIpifyAPI;
 //---------------------------------------------------------------------------
 #endif

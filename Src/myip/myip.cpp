@@ -5,6 +5,7 @@
 #include <tchar.h>
 //---------------------------------------------------------------------------
 USEFORM("Forms\Main.cpp", FrmMain);
+USEFORM("Modules\IpifyAPI.cpp", DmIpifyAPI); /* TDataModule: File Type */
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -13,6 +14,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
 		Application->Title = "What's My IP";
+		Application->CreateForm(__classid(TDmIpifyAPI), &DmIpifyAPI);
 		Application->CreateForm(__classid(TFrmMain), &FrmMain);
 		Application->Run();
 	}
