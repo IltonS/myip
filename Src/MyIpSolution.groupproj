@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3A4BA572-B9CF-4D71-91B9-ADB52EB494F1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="myip\myip.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="myip">
+        <MSBuild Projects="myip\myip.cbproj"/>
+    </Target>
+    <Target Name="myip:Clean">
+        <MSBuild Projects="myip\myip.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="myip:Make">
+        <MSBuild Projects="myip\myip.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="myip"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="myip:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="myip:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
