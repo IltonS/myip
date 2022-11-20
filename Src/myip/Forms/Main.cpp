@@ -6,6 +6,7 @@
 #pragma hdrstop
 
 #include "Main.h"
+#include "IPConfig.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -30,6 +31,10 @@ void __fastcall TFrmMain::FormShow(TObject *Sender)
 		if(dynamic_cast<TJSONObject*>(JSONValue)){
 			LblPublicIP->Caption = "  " + JSONValue->GetValue<UnicodeString>("ip");
 		}
+
+		IPConfigMemo->Lines->Text = ExecIPConfig();
+
+		FrmMain->Caption = "What's My IP - [Hostname: " + AHostName + "]";
 	 }
 	 catch (Exception &exception)
 	 {
@@ -41,6 +46,12 @@ void __fastcall TFrmMain::FormShow(TObject *Sender)
 void __fastcall TFrmMain::BtnCopyPublicIPClick(TObject *Sender)
 {
 	Clipboard()->AsText = LblPublicIP->Caption;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFrmMain::BtnCloseClick(TObject *Sender)
+{
+    Close();
 }
 //---------------------------------------------------------------------------
 

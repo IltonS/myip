@@ -4,8 +4,8 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
-USEFORM("Forms\Main.cpp", FrmMain);
 USEFORM("Modules\IpifyAPI.cpp", DmIpifyAPI); /* TDataModule: File Type */
+USEFORM("Forms\Main.cpp", FrmMain);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {

@@ -19,8 +19,12 @@ __published:	// IDE-managed Components
 	TLabel *LblPublicIP;
 	TPopupMenu *PublicIPPopupMenu;
 	TMenuItem *BtnCopyPublicIP;
+	TGroupBox *GbIPConfig;
+	TButton *BtnClose;
+	TMemo *IPConfigMemo;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall BtnCopyPublicIPClick(TObject *Sender);
+	void __fastcall BtnCloseClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

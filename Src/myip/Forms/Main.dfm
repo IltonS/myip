@@ -40,6 +40,31 @@ object FrmMain: TFrmMain
       PopupMenu = PublicIPPopupMenu
     end
   end
+  object GbIPConfig: TGroupBox
+    Left = 16
+    Top = 128
+    Width = 441
+    Height = 385
+    Caption = '  IP Config:  '
+    TabOrder = 1
+    object IPConfigMemo: TMemo
+      Left = 13
+      Top = 24
+      Width = 412
+      Height = 358
+      ScrollBars = ssVertical
+      TabOrder = 0
+    end
+  end
+  object BtnClose: TButton
+    Left = 382
+    Top = 528
+    Width = 75
+    Height = 25
+    Caption = '&Close'
+    TabOrder = 2
+    OnClick = BtnCloseClick
+  end
   object PublicIPPopupMenu: TPopupMenu
     Left = 384
     Top = 48
