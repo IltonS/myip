@@ -116,8 +116,8 @@ UnicodeString AHostName;
 				}
 
 				//Console->Add(AdapterInfoType + ": " + UnicodeString(pAdapt->AdapterName));
-				Console->Add(AdapterInfoType);
-				Console->Add("Description . . . . . . . . : " + UnicodeString(pAdapt->Description));
+				Console->Add(AdapterInfoType + ": " + UnicodeString(pAdapt->Description));
+				//Console->Add("Description . . . . . . . . : " + UnicodeString(pAdapt->Description));
 
 				UnicodeString yn = pAdapt->DhcpEnabled ? "yes" : "no";
 				Console->Add("DHCP Enabled. . . . . . . . : " + yn);
